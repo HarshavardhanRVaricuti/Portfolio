@@ -1,0 +1,7 @@
+# Resume PDF (contains personal contact info)
+Harshavardhan_Reddy_Varicuti_Resume.pdf
+*.pdf
+
+# OS files
+.DS_Store
+Thumbs.db
