@@ -113,7 +113,7 @@
   </header>
 
   <!-- ─── HERO ─── -->
-  <section id="hero" class="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+  <section id="hero" class="relative min-h-screen flex items-center justify-center px-6 overflow-hidden scroll-mt-20">
     <div class="hero-glow animate-float"></div>
     <div class="relative text-center max-w-3xl mx-auto space-y-6">
       <p class="text-accent font-medium tracking-widest uppercase text-sm fade-in">Data Engineer &middot; Data Scientist</p>
@@ -138,7 +138,7 @@
   </section>
 
   <!-- ─── ABOUT ─── -->
-  <section id="about" class="py-28 px-6">
+  <section id="about" class="py-28 px-6 scroll-mt-20">
     <div class="max-w-4xl mx-auto">
       <div class="fade-in">
         <p class="text-accent font-medium tracking-widest uppercase text-sm mb-3">About Me</p>
@@ -202,7 +202,7 @@
   </section>
 
   <!-- ─── PROJECTS ─── -->
-  <section id="projects" class="py-28 px-6">
+  <section id="projects" class="py-28 px-6 scroll-mt-20">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16 fade-in">
         <p class="text-accent font-medium tracking-widest uppercase text-sm mb-3">Portfolio</p>
@@ -220,10 +220,32 @@
           </div>
           <div class="p-6 space-y-3">
             <h3 class="text-xl font-bold text-white group-hover:text-accent transition-colors duration-300">Sogou News Classification</h3>
-            <p class="text-gray-400 text-sm leading-relaxed line-clamp-3">
-              Built and benchmarked text classification models (LinearSVC, Naive Bayes, KNN, 1D CNN, TextCNN) to categorize news articles.
-              Implemented TF-IDF vectorization pipelines to optimize feature extraction, identifying LinearSVC as the top performer.
-            </p>
+            <div class="project-read-more space-y-2">
+              <p class="project-read-more-excerpt text-gray-400 text-sm leading-relaxed line-clamp-3">
+                Built and benchmarked text classification models (LinearSVC, Naive Bayes, KNN, 1D CNN, TextCNN) to categorize news articles.
+                Implemented TF-IDF vectorization pipelines to optimize feature extraction, identifying LinearSVC as the top performer.
+              </p>
+              <div id="sogou-project-full" class="project-read-more-full hidden text-gray-400 text-sm leading-relaxed space-y-3" aria-hidden="true">
+                <p>
+                  Built and benchmarked text classification models (LinearSVC, Naive Bayes, KNN, 1D CNN, TextCNN) to categorize news articles.
+                  Implemented TF-IDF vectorization pipelines to optimize feature extraction, identifying LinearSVC as the top performer.
+                </p>
+                <p>
+                  I experimented end-to-end on a news article corpus: text cleaning, tokenization, building reproducible train and validation splits, and fair comparison across classical and deep learning baselines.
+                  Classical models on TF-IDF features provided a strong, efficient baseline, while PyTorch implementations of 1D CNN and TextCNN explored what additional signal learned representations could capture.
+                </p>
+                <p>
+                  Across the benchmarks I ran, LinearSVC paired with TF-IDF remained the standout for this setup&mdash;a practical reminder that simple linear models on well-tuned sparse features are often hard to beat before investing in heavier neural pipelines.
+                </p>
+              </div>
+              <button type="button"
+                      class="project-read-more-toggle cursor-pointer text-sm text-accent hover:text-accent-light font-medium inline-flex items-center gap-1.5 mt-0.5 transition-colors"
+                      aria-expanded="false"
+                      aria-controls="sogou-project-full">
+                <span class="project-read-more-label">Read more</span>
+                <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300 project-read-more-icon" aria-hidden="true"></i>
+              </button>
+            </div>
             <div class="flex flex-wrap gap-2 pt-1">
               <span class="text-xs font-medium bg-accent/10 text-accent px-3 py-1 rounded-full">Python</span>
               <span class="text-xs font-medium bg-accent/10 text-accent px-3 py-1 rounded-full">scikit-learn</span>
@@ -231,8 +253,11 @@
               <span class="text-xs font-medium bg-accent/10 text-accent px-3 py-1 rounded-full">NLP</span>
             </div>
             <div class="flex items-center gap-4 pt-3">
-              <a href="#" class="text-sm text-gray-400 hover:text-accent transition-colors inline-flex items-center gap-1.5">
-                <i class="fa-brands fa-github text-xs"></i> Source
+              <a href="https://github.com/wellsonhuang/ECEN-758-Fall-2025-Project"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="text-sm text-gray-400 hover:text-accent transition-colors inline-flex items-center gap-1.5">
+                <i class="fa-brands fa-github text-xs" aria-hidden="true"></i> Source
               </a>
             </div>
           </div>
@@ -261,47 +286,95 @@
           </div>
         </article>
 
-        <!-- Project 3: Data Automation -->
+        <!-- Project 3: Multimodal Alzheimer's Detection (in progress) -->
         <article class="group bg-dark-900 border border-dark-700 rounded-2xl overflow-hidden transition-all duration-500 hover:border-accent/30 card-glow hover:-translate-y-1">
           <div class="aspect-video bg-dark-800 flex items-center justify-center overflow-hidden">
             <div class="text-center space-y-2 p-6">
-              <i class="fa-solid fa-gears text-4xl text-accent/40"></i>
-              <p class="text-xs text-gray-500">Automation &middot; Python</p>
+              <i class="fa-solid fa-wave-square text-4xl text-accent/40"></i>
+              <p class="text-xs text-gray-500">Multimodal ML &middot; Audio &middot; NLP &middot; Research</p>
             </div>
           </div>
           <div class="p-6 space-y-3">
-            <h3 class="text-xl font-bold text-white group-hover:text-accent transition-colors duration-300">Data Pre-Processing Automation</h3>
-            <p class="text-gray-400 text-sm leading-relaxed line-clamp-3">
-              Developed Python automation scripts to streamline data pre-processing workflows, reducing manual effort by 25%.
-              Improved team efficiency and data quality across multiple production pipelines.
-            </p>
+            <p class="text-xs text-accent font-medium tracking-wide uppercase">Currently working on</p>
+            <h3 class="text-xl font-bold text-white group-hover:text-accent transition-colors duration-300">Multimodal Audio-Text Alzheimer&rsquo;s Detection</h3>
+            <div class="project-read-more space-y-2">
+              <p class="project-read-more-excerpt text-gray-400 text-sm leading-relaxed line-clamp-3">
+                Developing a multimodal machine learning system that applies multi-head cross-modal attention between Wav2Vec2-XLS-R audio embeddings and XLM-RoBERTa text embeddings to capture token-level interactions, followed by class-weighted ordinal regression on 3.9K conversational transcripts.
+              </p>
+              <div id="alzheimer-project-full" class="project-read-more-full hidden text-gray-400 text-sm leading-relaxed space-y-3" aria-hidden="true">
+                <p>
+                  Developing a multimodal machine learning system that applies multi-head cross-modal attention between Wav2Vec2-XLS-R audio embeddings and XLM-RoBERTa text embeddings to capture token-level interactions, followed by class-weighted ordinal regression on 3.9K conversational transcripts.
+                </p>
+                <p>
+                  Implementing LoRA adapters and conducting zero-shot and few-shot evaluations to study cross-lingual generalization and model performance.
+                </p>
+              </div>
+              <button type="button"
+                      class="project-read-more-toggle cursor-pointer text-sm text-accent hover:text-accent-light font-medium inline-flex items-center gap-1.5 mt-0.5 transition-colors"
+                      aria-expanded="false"
+                      aria-controls="alzheimer-project-full">
+                <span class="project-read-more-label">Read more</span>
+                <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300 project-read-more-icon" aria-hidden="true"></i>
+              </button>
+            </div>
             <div class="flex flex-wrap gap-2 pt-1">
-              <span class="text-xs font-medium bg-accent/10 text-accent px-3 py-1 rounded-full">Python</span>
-              <span class="text-xs font-medium bg-accent/10 text-accent px-3 py-1 rounded-full">Pandas</span>
-              <span class="text-xs font-medium bg-accent/10 text-accent px-3 py-1 rounded-full">Automation</span>
+              <span class="text-xs font-medium bg-accent/10 text-accent px-3 py-1 rounded-full">PyTorch</span>
+              <span class="text-xs font-medium bg-accent/10 text-accent px-3 py-1 rounded-full">Wav2Vec2</span>
+              <span class="text-xs font-medium bg-accent/10 text-accent px-3 py-1 rounded-full">XLM-RoBERTa</span>
+              <span class="text-xs font-medium bg-accent/10 text-accent px-3 py-1 rounded-full">LoRA</span>
+              <span class="text-xs font-medium bg-accent/10 text-accent px-3 py-1 rounded-full">Multimodal ML</span>
             </div>
           </div>
         </article>
 
-        <!-- Project 4: Scalable Data Solutions -->
+        <!-- Project 4: Live Financial Data Ecosystem -->
         <article class="group bg-dark-900 border border-dark-700 rounded-2xl overflow-hidden transition-all duration-500 hover:border-accent/30 card-glow hover:-translate-y-1">
           <div class="aspect-video bg-dark-800 flex items-center justify-center overflow-hidden">
             <div class="text-center space-y-2 p-6">
-              <i class="fa-solid fa-diagram-project text-4xl text-accent/40"></i>
-              <p class="text-xs text-gray-500">Data Modeling &middot; UAT</p>
+              <i class="fa-solid fa-chart-line text-4xl text-accent/40"></i>
+              <p class="text-xs text-gray-500">Data Engineering &middot; Modern Data Stack &middot; Financial Analytics</p>
             </div>
           </div>
           <div class="p-6 space-y-3">
-            <h3 class="text-xl font-bold text-white group-hover:text-accent transition-colors duration-300">Scalable Data Solutions &amp; Modeling</h3>
-            <p class="text-gray-400 text-sm leading-relaxed line-clamp-3">
-              Designed and implemented scalable data solutions leveraging data modeling concepts. Collaborated with cross-functional teams
-              to resolve critical issues during UAT and presented findings to drive informed business actions.
-            </p>
+            <h3 class="text-xl font-bold text-white group-hover:text-accent transition-colors duration-300">Building a Live Financial Data Ecosystem with the Modern Data Stack</h3>
+            <div class="project-read-more space-y-2">
+              <p class="project-read-more-excerpt text-gray-400 text-sm leading-relaxed line-clamp-3">
+                End-to-end data engineering for the financial data lifecycle: a custom Python extractor moves data from APIs to AWS S3 and Snowflake.
+                Apache Airflow orchestrates the schedule; dbt runs SQL transformations; a Power BI dashboard uses DirectQuery so insights update as soon as Snowflake does.
+              </p>
+              <div id="financial-project-full" class="project-read-more-full hidden text-gray-400 text-sm leading-relaxed space-y-3" aria-hidden="true">
+                <p>
+                  I recently completed an end-to-end Data Engineering project designed to handle the entire lifecycle of financial data. Starting with a custom Python extractor, I built a pipeline that moves data from APIs to AWS S3, then into Snowflake for high-performance warehousing.
+                </p>
+                <p>
+                  The &ldquo;brain&rdquo; of the project is Apache Airflow, which ensures the data flows on a schedule, while dbt handles the heavy lifting of SQL transformations to keep the data clean and structured. To close the loop, I built a Power BI dashboard using DirectQuery&mdash;meaning as soon as the data is transformed in Snowflake, the dashboard updates automatically.
+                </p>
+              </div>
+              <button type="button"
+                      class="project-read-more-toggle cursor-pointer text-sm text-accent hover:text-accent-light font-medium inline-flex items-center gap-1.5 mt-0.5 transition-colors"
+                      aria-expanded="false"
+                      aria-controls="financial-project-full">
+                <span class="project-read-more-label">Read more</span>
+                <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300 project-read-more-icon" aria-hidden="true"></i>
+              </button>
+            </div>
             <div class="flex flex-wrap gap-2 pt-1">
-              <span class="text-xs font-medium bg-accent/10 text-accent px-3 py-1 rounded-full">Data Modeling</span>
+              <span class="text-xs font-medium bg-accent/10 text-accent px-3 py-1 rounded-full">Python</span>
+              <span class="text-xs font-medium bg-accent/10 text-accent px-3 py-1 rounded-full">Apache Airflow</span>
+              <span class="text-xs font-medium bg-accent/10 text-accent px-3 py-1 rounded-full">Docker</span>
+              <span class="text-xs font-medium bg-accent/10 text-accent px-3 py-1 rounded-full">AWS S3</span>
+              <span class="text-xs font-medium bg-accent/10 text-accent px-3 py-1 rounded-full">Snowflake</span>
+              <span class="text-xs font-medium bg-accent/10 text-accent px-3 py-1 rounded-full">dbt</span>
+              <span class="text-xs font-medium bg-accent/10 text-accent px-3 py-1 rounded-full">Power BI</span>
               <span class="text-xs font-medium bg-accent/10 text-accent px-3 py-1 rounded-full">SQL</span>
-              <span class="text-xs font-medium bg-accent/10 text-accent px-3 py-1 rounded-full">ETL</span>
-              <span class="text-xs font-medium bg-accent/10 text-accent px-3 py-1 rounded-full">Spark</span>
+            </div>
+            <div class="flex items-center gap-4 pt-3">
+              <a href="https://github.com/HarshavardhanRVaricuti/fintech-dbt-transformations"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="text-sm text-gray-400 hover:text-accent transition-colors inline-flex items-center gap-1.5">
+                <i class="fa-brands fa-github text-xs" aria-hidden="true"></i> Source
+              </a>
             </div>
           </div>
         </article>
@@ -311,7 +384,7 @@
   </section>
 
   <!-- ─── SKILLS ─── -->
-  <section id="skills" class="py-28 px-6">
+  <section id="skills" class="py-28 px-6 scroll-mt-20">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16 fade-in">
         <p class="text-accent font-medium tracking-widest uppercase text-sm mb-3">Expertise</p>
@@ -433,7 +506,7 @@
   </section>
 
   <!-- ─── EXPERIENCE ─── -->
-  <section id="experience" class="py-28 px-6">
+  <section id="experience" class="py-28 px-6 scroll-mt-20">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-16 fade-in">
         <p class="text-accent font-medium tracking-widest uppercase text-sm mb-3">Career</p>
@@ -584,7 +657,7 @@
   </section>
 
   <!-- ─── CONTACT / FOOTER ─── -->
-  <section id="contact" class="py-28 px-6">
+  <section id="contact" class="py-28 px-6 scroll-mt-20">
     <div class="max-w-2xl mx-auto text-center fade-in">
       <p class="text-accent font-medium tracking-widest uppercase text-sm mb-3">Contact</p>
       <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Let's Work Together</h2>
@@ -613,7 +686,7 @@
         <a href="https://linkedin.com/in/harshavardhanreddyvaricuti" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-gray-400 hover:text-white transition-colors duration-300">
           <i class="fa-brands fa-linkedin-in text-lg"></i>
         </a>
-        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-gray-400 hover:text-white transition-colors duration-300">
+        <a href="https://github.com/HarshavardhanRVaricuti" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-gray-400 hover:text-white transition-colors duration-300">
           <i class="fa-brands fa-github text-lg"></i>
         </a>
         <a href="mailto:harshavaricuti@gmail.com" aria-label="Email" class="text-gray-400 hover:text-white transition-colors duration-300">
@@ -627,21 +700,27 @@
   <script>
     const toggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
-    toggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      const icon = toggle.querySelector('i');
-      icon.classList.toggle('fa-bars');
-      icon.classList.toggle('fa-xmark');
-    });
-
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
+    if (toggle && mobileMenu) {
+      toggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
         const icon = toggle.querySelector('i');
-        icon.classList.add('fa-bars');
-        icon.classList.remove('fa-xmark');
+        if (icon) {
+          icon.classList.toggle('fa-bars');
+          icon.classList.toggle('fa-xmark');
+        }
       });
-    });
+
+      mobileMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          const icon = toggle.querySelector('i');
+          if (icon) {
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-xmark');
+          }
+        });
+      });
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -656,12 +735,48 @@
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+        let target;
+        try {
+          target = document.querySelector(href);
+        } catch {
+          return;
+        }
+        if (!target) return;
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
+        target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    document.querySelectorAll('.project-read-more-toggle').forEach((btn) => {
+      const root = btn.closest('.project-read-more');
+      const excerpt = root?.querySelector('.project-read-more-excerpt');
+      const full = root?.querySelector('.project-read-more-full');
+      const label = btn.querySelector('.project-read-more-label');
+      const icon = btn.querySelector('.project-read-more-icon');
+      if (!root || !excerpt || !full || !label) return;
+
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        if (expanded) {
+          excerpt.classList.remove('hidden');
+          excerpt.classList.add('line-clamp-3');
+          full.classList.add('hidden');
+          full.setAttribute('aria-hidden', 'true');
+          btn.setAttribute('aria-expanded', 'false');
+          label.textContent = 'Read more';
+          if (icon) icon.classList.remove('rotate-180');
+        } else {
+          excerpt.classList.add('hidden');
+          excerpt.classList.remove('line-clamp-3');
+          full.classList.remove('hidden');
+          full.setAttribute('aria-hidden', 'false');
+          btn.setAttribute('aria-expanded', 'true');
+          label.textContent = 'Read less';
+          if (icon) icon.classList.add('rotate-180');
         }
       });
     });
