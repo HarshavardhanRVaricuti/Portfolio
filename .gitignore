@@ -1,6 +1,6 @@
 # Resume PDF (contains personal contact info)
+# Keep the public portfolio PDF tracked for GitHub Pages.
 Harshavardhan_Reddy_Varicuti_Resume.pdf
-*.pdf
 
 # OS files
 .DS_Store
